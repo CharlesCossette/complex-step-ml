@@ -1,4 +1,4 @@
-%% Test Complex Step Jacobian SO(3)
+%% Test 1 - Complex Step Jacobian SO(3)
 % %%% Test function
 % DCM where we'll evaluate the derivative
 phi_hat = [0;0.5;0.2];
@@ -17,7 +17,7 @@ gradCS = complexStepLie(f,C_bar,3,@wedgeSO3,'left')
 assert(norm(gradA - gradCS) < 1e-14)
 
 
-%% Test 2 Complex Step Jacobian SO(3)
+%% Test 2 - Complex Step Jacobian SO(3)
 % %%% Test function
 % DCM where we'll evaluate the derivative
 phi_hat = [0;0.5;0.2];
