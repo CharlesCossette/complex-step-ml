@@ -1,8 +1,17 @@
 import numpy as np
-from time import time
 import math
 
 def expmTaylor(A):
+    """
+    Computes the matrix exponential of a matrix A using a 
+    direct Taylor series expansion until convergence. 
+    
+    Args:
+        A: n x n matrix. ndarray
+    Returns:
+        X: n x n matrix exponential of A. ndarray
+    """
+
     n = A.shape[0]
     X_old = 1000*np.eye(n)
     X = np.zeros((n,n))
@@ -94,12 +103,20 @@ def forwardDifferenceLie(f,X,n,wedgeOp):
     return jac
 
 def testFunction(X):
+    # Function to differentiate
     v = np.array([3,4,5])
     y = np.array([1,2,3])
     y.shape = (3,1)
     return v @ X @ y
 
 def wedgeSO3(x):
+    """
+    Skew-symmetrix cross operator for SO(3). Takes element of R^n
+    to the Lie algebra.
+
+    Args:
+        x: 3 x 1 ndarray
+    """
     return np.array([[0, -x[2, 0], x[1, 0]],[x[2, 0],0,-x[0, 0]],[-x[1, 0],x[0, 0],0]])
 
 
