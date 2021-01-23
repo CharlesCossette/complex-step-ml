@@ -109,10 +109,6 @@ start = time()
 jac_fd = forwardDifference(testFunction,x_bar,10**-6)
 time_fd = time() - start
 
-
-
-
-
 print("Analytical Jacobian:         " + str(jac_true) )
 print("Complex-step Jacobian:       " + str(jac_cs)+ ". Elapsed time: " + str(time_cs))
 print("Central-difference Jacobian: " + str(jac_cd)+ ". Elapsed time: " + str(time_cd))

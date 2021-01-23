@@ -23,7 +23,7 @@ function [jac, f_bar] = complexStepLie(f, X_bar, n, wedgeOp, direction)
 %       jacobian matrix
 % f_bar: [m x 1] double
 %       (optional) function value at derivative evaluation point
-
+x = 5
 h = 1e-18;
 f_bar = f(X_bar);
 m = length(f_bar);
